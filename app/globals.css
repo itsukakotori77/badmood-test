@@ -1,26 +1,153 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-romantic: #fff0f5;
+    --card-bg: rgba(255, 255, 255, 0.75);
+    --card-border: rgba(255, 182, 193, 0.5);
+    --text-primary: #4a1525;
+    --text-secondary: #7d324d;
+    --accent-pink: #ff758c;
+    --accent-rose: #ff7eb3;
+    --accent-lavender: #c471ed;
+    --glow-color: rgba(255, 117, 140, 0.35);
+  }
+
+  .dark {
+    --bg-romantic: #140510;
+    --card-bg: rgba(35, 12, 28, 0.75);
+    --card-border: rgba(255, 117, 140, 0.3);
+    --text-primary: #ffe8f0;
+    --text-secondary: #f0a6c0;
+    --accent-pink: #ff758c;
+    --accent-rose: #ff7eb3;
+    --accent-lavender: #d76d77;
+    --glow-color: rgba(255, 117, 140, 0.25);
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-romantic);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom background animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px var(--glow-color);
+  }
+  50% {
+    box-shadow: 0 0 30px var(--glow-color), 0 0 50px rgba(255, 126, 179, 0.2);
+  }
+}
+
+@keyframes heart-beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.15);
+  }
+  30% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) scale(0.5) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-20vh) scale(1.2) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite;
+}
+
+.animate-heart-beat {
+  animation: heart-beat 1.5s infinite;
+}
+
+/* Glassmorphism utility */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 8px 32px 0 rgba(255, 117, 140, 0.15);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px 0 rgba(255, 117, 140, 0.28);
+  border-color: rgba(255, 117, 140, 0.8);
+}
+
+/* Gradient text */
+.text-gradient-romantic {
+  background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 50%, #c471ed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 240, 245, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff758c, #ff7eb3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #e05c74, #e8659b);
+}
+
+/* Modern entry/exit animations using @starting-style and transition-behavior */
+.fade-scale-enter {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: opacity 0.4s ease-out, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), display 0.4s;
+  transition-behavior: allow-discrete;
+}
+
+@starting-style {
+  .fade-scale-enter {
+    opacity: 0;
+    transform: scale(0.95) translateY(12px);
+  }
 }
