@@ -348,7 +348,7 @@ export default function MoodQuiz({ onComplete, onCancel }: MoodQuizProps) {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="flex items-center justify-between pt-4">
+            <div className="flex items-center lg:flex-row flex-col justify-between pt-4">
               <button
                 onClick={() => {
                   if (currentStep > 0) {

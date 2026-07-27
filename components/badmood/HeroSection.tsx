@@ -59,7 +59,7 @@ export default function HeroSection({ setActiveTab }: HeroSectionProps) {
             Dia Lagi <span className="underline decoration-wavy decoration-rose-400">Silent Treatment?</span> Atau Cuma <span className="bg-gradient-to-r from-amber-500 to-rose-500 bg-clip-text text-transparent">Lapar (Hangry)?</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-pink-950/80 dark:text-pink-100/80 font-medium max-w-xl leading-relaxed">
+          <p className="text-base sm:text-lg text-pink-950/80 dark:text-pink-300 font-medium max-w-xl leading-relaxed">
             Selamat datang di <strong className="text-rose-600 dark:text-rose-400">Tes Badmood Cewek!</strong> 🔮 Gak usah pusing nebak-nebak kenapa chat kamu cuma dibales &quot;Y&quot; atau di-read doang. Dalam 60 detik, algoritma kami bakal mendeteksi rahasia mood dia, akar masalahnya, dan ngasih resep romantis yang dijamin bikin dia senyum lagi!
           </p>
 
@@ -85,15 +85,15 @@ export default function HeroSection({ setActiveTab }: HeroSectionProps) {
           {/* Quick Fun Statistics */}
           <div className="grid grid-cols-3 gap-3 w-full pt-6 border-t border-pink-200/60 dark:border-pink-900/60">
             <div className="glass-card p-3 rounded-xl text-center">
-              <span className="block text-xl sm:text-2xl font-black text-rose-600 dark:text-rose-400">99.9%</span>
+              <span className="block text-sm lg:text-lg whitespace-nowrap font-black text-rose-600 dark:text-rose-400">99.9%</span>
               <span className="text-[11px] sm:text-xs font-semibold text-pink-800 dark:text-pink-300">Tingkat Akurasi 💘</span>
             </div>
             <div className="glass-card p-3 rounded-xl text-center">
-              <span className="block text-xl sm:text-2xl font-black text-purple-600 dark:text-purple-400">10,000+</span>
+              <span className="block text-sm lg:text-lg whitespace-nowrap font-black text-purple-600 dark:text-purple-400">10,000+</span>
               <span className="text-[11px] sm:text-xs font-semibold text-pink-800 dark:text-pink-300">Cewek Hangry Kenyangan 🍟</span>
             </div>
             <div className="glass-card p-3 rounded-xl text-center">
-              <span className="block text-xl sm:text-2xl font-black text-amber-500">0</span>
+              <span className="block text-sm lg:text-lg whitespace-nowrap font-black text-amber-500">0</span>
               <span className="text-[11px] sm:text-xs font-semibold text-pink-800 dark:text-pink-300">Cowok Menang Debat 👑</span>
             </div>
           </div>
