@@ -113,7 +113,7 @@ export default function Home() {
           </div>
 
           <div className="text-xs text-pink-600 dark:text-pink-400 font-medium">
-            <span>Dibuat dengan 💕 & 🧋 Boba untuk Cewek & Pacar di Seluruh Dunia</span>
+            <span>Dibuat dengan 💕 dari danunuuu & 🧋 Boba untuk Cewek & Pacar di Seluruh Dunia</span>
           </div>
         </div>
       </footer>
